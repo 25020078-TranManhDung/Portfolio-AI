@@ -16,13 +16,14 @@ export default function Summary() {
   };
 
   return (
-    <motion.div 
-      variants={container}
-      initial="hidden"
-      animate="show"
-      className="flex flex-col gap-12 w-full"
-    >
-      <div className="flex flex-col gap-4 text-center items-center">
+    <div className="flex flex-col gap-12 w-full overflow-hidden">
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false, amount: 0.2 }}
+        transition={{ duration: 0.5 }}
+        className="flex flex-col gap-4 text-center items-center"
+      >
         <div className="p-3 bg-primary/20 text-primary rounded-2xl w-fit mb-2">
           <Trophy size={32} />
         </div>
@@ -32,11 +33,20 @@ export default function Summary() {
         <p className="text-muted-foreground text-lg max-w-2xl">
           Hành trình xây dựng Digital Portfolio và những giá trị đọng lại sau môn học Nhập môn Công nghệ số và Ứng dụng Trí tuệ nhân tạo.
         </p>
-      </div>
+      </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+      <motion.div 
+        variants={container}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: false, amount: 0.1 }}
+        className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4 overflow-hidden"
+      >
         {/* Experience Section */}
-        <motion.section variants={item} className="flex flex-col gap-6 md:col-span-2 glass-panel p-8 md:p-10 rounded-3xl relative overflow-hidden">
+        <motion.section 
+          variants={item}
+          className="flex flex-col gap-6 md:col-span-2 glass-panel p-8 md:p-10 rounded-3xl relative overflow-hidden"
+        >
           <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px] -z-10 pointer-events-none" />
           <div className="flex items-center gap-3">
             <Heart className="text-rose-400" size={28} />
@@ -48,7 +58,10 @@ export default function Summary() {
         </motion.section>
 
         {/* Skills Section */}
-        <motion.section variants={item} className="flex flex-col gap-6 glass-panel p-8 rounded-3xl">
+        <motion.section 
+          variants={item}
+          className="flex flex-col gap-6 glass-panel p-8 rounded-3xl"
+        >
           <div className="flex items-center gap-3">
             <BookOpen className="text-emerald-400" size={28} />
             <h2 className="text-2xl font-bold text-white">Cách áp dụng kỹ năng trong tương lai</h2>
@@ -70,7 +83,10 @@ export default function Summary() {
         </motion.section>
 
         {/* Challenge Section */}
-        <motion.section variants={item} className="flex flex-col gap-6 glass-panel p-8 rounded-3xl">
+        <motion.section 
+          variants={item}
+          className="flex flex-col gap-6 glass-panel p-8 rounded-3xl"
+        >
           <div className="flex items-center gap-3">
             <Compass className="text-amber-400" size={28} />
             <h2 className="text-2xl font-bold text-white">Điểm tâm đắc & Thách thức</h2>
@@ -95,7 +111,7 @@ export default function Summary() {
             </div>
           </div>
         </motion.section>
-      </div>
-    </motion.div>
+      </motion.div>
+    </div>
   );
 }

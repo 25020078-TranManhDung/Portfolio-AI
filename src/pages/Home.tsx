@@ -10,41 +10,45 @@ export default function Home() {
   };
 
   const item = {
-    hidden: { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 300, damping: 24 } }
+    hidden: { opacity: 0, y: 30, scale: 0.95 },
+    show: { opacity: 1, y: 0, scale: 1, transition: { type: "spring", stiffness: 300, damping: 24 } }
   };
 
   return (
     <motion.div 
       variants={container}
       initial="hidden"
-      animate="show"
+      whileInView="show"
+      viewport={{ once: false, amount: 0.1 }}
       className="flex flex-col gap-16"
     >
       {/* Hero Section */}
-      <section className="flex flex-col-reverse md:flex-row items-center gap-10 pt-12">
-        <div className="flex flex-col gap-6 flex-1">
-          <motion.div variants={item} className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary w-fit text-sm font-medium border border-primary/20">
+      <section className="flex flex-col-reverse md:flex-row items-center gap-10 pt-12 overflow-hidden">
+        <motion.div 
+          variants={item}
+          className="flex flex-col gap-6 flex-1"
+        >
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary w-fit text-sm font-medium border border-primary/20">
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
             </span>
             Digital Portfolio
-          </motion.div>
+          </div>
           
-          <motion.h1 variants={item} className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white max-w-3xl leading-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white max-w-3xl leading-tight">
             Xin chào, tôi là
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent mt-2">
               Trần Mạnh Dũng.
             </span>
-          </motion.h1>
+          </h1>
           
-          <motion.p variants={item} className="text-lg text-muted-foreground max-w-2xl leading-relaxed">
+          <p className="text-lg text-muted-foreground max-w-2xl leading-relaxed">
             Sinh viên ngành Công nghệ thông tin tại Đại học Công Nghệ - ĐHQGHN. 
             Đam mê lập trình, khám phá công nghệ mới và xây dựng các sản phẩm phần mềm mang lại giá trị thực tiễn.
-          </motion.p>
+          </p>
           
-          <motion.div variants={item} className="flex gap-4 mt-4">
+          <div className="flex gap-4 mt-4">
             <a
               href="#projects"
               onClick={(e) => {
@@ -55,8 +59,8 @@ export default function Home() {
             >
               Khám phá Dự án <ArrowRight size={18} />
             </a>
-          </motion.div>
-        </div>
+          </div>
+        </motion.div>
 
         <motion.div 
           variants={item}
@@ -78,8 +82,11 @@ export default function Home() {
       </section>
 
       {/* Info Cards */}
-      <section className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-        <motion.div variants={item} className="glass-panel p-8 rounded-2xl flex flex-col gap-4 relative overflow-hidden group">
+      <section className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8 overflow-hidden">
+        <motion.div 
+          variants={item}
+          className="glass-panel p-8 rounded-2xl flex flex-col gap-4 relative overflow-hidden group"
+        >
           <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-bl-[100px] -z-10 transition-transform group-hover:scale-110" />
           <div className="p-3 bg-primary/20 text-primary rounded-xl w-fit">
             <GraduationCap size={24} />
@@ -94,7 +101,10 @@ export default function Home() {
           </ul>
         </motion.div>
 
-        <motion.div variants={item} className="glass-panel p-8 rounded-2xl flex flex-col gap-4 relative overflow-hidden group">
+        <motion.div 
+          variants={item}
+          className="glass-panel p-8 rounded-2xl flex flex-col gap-4 relative overflow-hidden group"
+        >
           <div className="absolute top-0 right-0 w-32 h-32 bg-accent/10 rounded-bl-[100px] -z-10 transition-transform group-hover:scale-110" />
           <div className="p-3 bg-accent/20 text-accent rounded-xl w-fit">
             <Target size={24} />

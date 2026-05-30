@@ -7,22 +7,48 @@ import { X, CheckCircle2, Target, Lightbulb, ExternalLink } from "lucide-react";
 export default function Projects() {
   const [selectedId, setSelectedId] = useState<string | null>(null);
 
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: { staggerChildren: 0.15 }
+    }
+  };
+
+  const item = {
+    hidden: { opacity: 0, y: 30, scale: 0.95 },
+    show: { opacity: 1, y: 0, scale: 1, transition: { type: "spring", stiffness: 300, damping: 24 } }
+  };
+
   return (
-    <div className="flex flex-col gap-12 w-full">
-      <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-12 w-full overflow-hidden">
+      <motion.div 
+        variants={item}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: false, amount: 0.2 }}
+        className="flex flex-col gap-4"
+      >
         <h1 className="text-3xl sm:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent w-fit">
           Dự án Học tập
         </h1>
         <p className="text-muted-foreground text-lg max-w-2xl">
           Tổng hợp kết quả từ Bài 1 đến Bài 6, thể hiện quy trình ứng dụng công nghệ và trí tuệ nhân tạo vào các tác vụ học tập, nghiên cứu và quản lý dự án.
         </p>
-      </div>
+      </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative">
-        {projects.map((project) => {
+      <motion.div 
+        variants={container} 
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: false, amount: 0.1 }}
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative"
+      >
+        {projects.map((project, idx) => {
           const Icon = project.icon;
           return (
             <motion.div
+              variants={item}
               layoutId={`card-${project.id}`}
               key={project.id}
               onClick={() => setSelectedId(project.id)}
@@ -60,7 +86,7 @@ export default function Projects() {
             </motion.div>
           );
         })}
-      </div>
+      </motion.div>
 
       <AnimatePresence>
         {selectedId && (
