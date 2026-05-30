@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { ArrowRight, Code, GraduationCap, Target } from "lucide-react";
+import { ArrowRight, ArrowDown, Code, GraduationCap, Target } from "lucide-react";
 import { useState, useEffect } from "react";
 
 export default function Home() {
@@ -54,7 +54,7 @@ export default function Home() {
       className="flex flex-col gap-16"
     >
       {/* Hero Section */}
-      <section className="flex flex-col-reverse md:flex-row items-center gap-10 pt-12 overflow-hidden">
+      <section className="flex flex-col-reverse md:flex-row items-center gap-10 pt-12">
         <motion.div 
           variants={item}
           className="flex flex-col gap-6 flex-1"
@@ -98,22 +98,50 @@ export default function Home() {
 
         <motion.div 
           variants={item}
-          className="flex-shrink-0 relative"
+          className="flex-shrink-0 relative group"
         >
-          <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-accent/20 rounded-full blur-2xl -z-10" />
-          <div className="w-64 h-64 md:w-80 md:h-80 rounded-full border-4 border-white/10 overflow-hidden relative glass-panel p-2">
-            <img 
-              src="/portrait.jpg" 
-              alt="Trần Mạnh Dũng" 
-              className="w-full h-full object-cover rounded-full bg-muted/50"
-              onError={(e) => {
-                const target = e.target as HTMLImageElement;
-                target.src = "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400"; // Fallback placeholder
-              }}
-            />
+          {/* Animated glow */}
+          <div className="absolute inset-0 bg-gradient-to-tr from-primary to-accent rounded-full blur-3xl opacity-20 -z-10 group-hover:opacity-40 transition-opacity duration-700 animate-pulse" />
+          
+          <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full p-[4px] overflow-hidden flex items-center justify-center" style={{ WebkitMaskImage: '-webkit-radial-gradient(white, black)' }}>
+            {/* Spinning gradient border */}
+            <div className="absolute w-[200%] h-[200%] animate-[spin_4s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,transparent_0%,transparent_50%,hsl(var(--primary))_100%)] opacity-80" />
+            <div className="absolute w-[200%] h-[200%] animate-[spin_4s_linear_infinite] bg-[conic-gradient(from_270deg_at_50%_50%,transparent_0%,transparent_50%,hsl(var(--accent))_100%)] opacity-80" />
+            
+            {/* Inner mask */}
+            <div className="absolute inset-[4px] bg-background rounded-full z-10" />
+            
+            <div className="relative z-20 w-full h-full rounded-full bg-background/50 p-2 overflow-hidden border border-white/5" style={{ WebkitMaskImage: '-webkit-radial-gradient(white, black)' }}>
+              <img 
+                src="/portrait.jpg" 
+                alt="Trần Mạnh Dũng" 
+                className="w-full h-full object-cover rounded-full bg-muted/50 transition-transform duration-700 group-hover:scale-105"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.src = "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400"; // Fallback placeholder
+                }}
+              />
+            </div>
           </div>
         </motion.div>
       </section>
+
+      {/* Scroll Indicator */}
+      <motion.div 
+        variants={item}
+        className="flex justify-center -mt-4 mb-4 md:-mt-8 md:mb-8"
+      >
+        <button 
+          onClick={() => {
+            window.scrollBy({ top: 500, behavior: 'smooth' });
+          }}
+          className="flex flex-col items-center gap-2 text-muted-foreground/60 hover:text-primary transition-colors cursor-pointer group"
+          aria-label="Cuộn xuống"
+        >
+          <span className="text-xs uppercase tracking-[0.2em] font-medium opacity-0 group-hover:opacity-100 transition-opacity">Cuộn xuống</span>
+          <ArrowDown size={24} className="animate-bounce" />
+        </button>
+      </motion.div>
 
       {/* Info Cards */}
       <section className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8 overflow-hidden">
