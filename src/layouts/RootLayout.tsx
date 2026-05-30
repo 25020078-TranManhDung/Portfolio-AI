@@ -1,13 +1,14 @@
 import { Outlet } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import MeshGradient from "../components/MeshGradient";
+import InteractiveParticles from "../components/InteractiveParticles";
 
 export default function RootLayout() {
   return (
     <div className="min-h-screen flex flex-col relative overflow-hidden">
-      {/* Background accents */}
-      <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-primary/20 blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-accent/20 blur-[120px] pointer-events-none" />
+      <MeshGradient />
+      <InteractiveParticles />
       
       <Navbar />
       
