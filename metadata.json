@@ -1,0 +1,6 @@
+{
+  "name": "Trần Mạnh Dũng - Digital Portfolio",
+  "description": "Digital Portfolio môn Nhập môn Công nghệ số và Ứng dụng Trí tuệ nhân tạo.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
