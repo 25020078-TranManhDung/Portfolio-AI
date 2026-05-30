@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { ArrowRight, ArrowDown, Code, GraduationCap, Target } from "lucide-react";
+import { ArrowRight, ArrowDown, Code, GraduationCap, Target, Quote } from "lucide-react";
 import { useState, useEffect } from "react";
 
 export default function Home() {
@@ -143,6 +143,39 @@ export default function Home() {
         </button>
       </motion.div>
 
+      {/* Philosophy Quote */}
+      <motion.section
+        variants={item}
+        className="w-full max-w-4xl mx-auto my-12"
+      >
+        <div className="relative glass-panel rounded-3xl p-8 md:p-12 overflow-hidden group">
+          {/* Decorative Elements */}
+          <div className="absolute top-0 left-0 w-32 h-32 bg-primary/10 rounded-br-[100px] -z-10 transition-transform duration-700 group-hover:scale-150" />
+          <div className="absolute bottom-0 right-0 w-32 h-32 bg-accent/10 rounded-tl-[100px] -z-10 transition-transform duration-700 group-hover:scale-150" />
+          <div className="absolute -top-10 -right-10 text-primary/5 -z-10 rotate-12 transition-transform duration-700 group-hover:rotate-0 group-hover:scale-110">
+            <Quote size={120} />
+          </div>
+
+          <div className="flex flex-col items-center text-center gap-6">
+            <div className="p-4 bg-background/50 rounded-full border border-white/5 shadow-inner backdrop-blur-md">
+              <Quote className="text-primary" size={32} />
+            </div>
+            
+            <blockquote className="text-2xl md:text-3xl font-medium leading-relaxed bg-clip-text text-transparent bg-gradient-to-r from-foreground via-foreground to-muted-foreground">
+              "Công nghệ luôn thay đổi, nhưng tư duy giải quyết vấn đề bằng công nghệ thì luôn vững bền."
+            </blockquote>
+            
+            <div className="flex items-center gap-4 mt-2">
+              <div className="h-px w-12 bg-primary/50" />
+              <span className="text-sm uppercase tracking-widest text-primary font-semibold">
+                Triết lý cá nhân
+              </span>
+              <div className="h-px w-12 bg-primary/50" />
+            </div>
+          </div>
+        </div>
+      </motion.section>
+
       {/* Info Cards */}
       <section className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8 overflow-hidden">
         <motion.div 
@@ -153,9 +186,9 @@ export default function Home() {
           <div className="p-3 bg-primary/20 text-primary rounded-xl w-fit">
             <GraduationCap size={24} />
           </div>
-          <h2 className="text-xl font-bold text-white mt-2">Học vấn & Sở thích</h2>
+          <h2 className="text-xl font-bold text-foreground mt-2">Học vấn & Sở thích</h2>
           <ul className="text-muted-foreground space-y-2 mt-2 list-disc list-inside">
-            <li>Mã sinh viên: <span className="text-white font-medium">25020078</span></li>
+            <li>Mã sinh viên: <span className="text-foreground font-medium">25020078</span></li>
             <li>Trường: Đại học Công Nghệ - ĐHQGHN</li>
             <li>Chuyên ngành: Công nghệ thông tin</li>
             <li>Sở thích: Lập trình, thiết kế UI/UX, tìm hiểu AI và âm nhạc.</li>
@@ -171,7 +204,7 @@ export default function Home() {
           <div className="p-3 bg-accent/20 text-accent rounded-xl w-fit">
             <Target size={24} />
           </div>
-          <h2 className="text-xl font-bold text-white mt-2">Mục tiêu Portfolio</h2>
+          <h2 className="text-xl font-bold text-foreground mt-2">Mục tiêu Portfolio</h2>
           <p className="text-muted-foreground leading-relaxed">
             Portfolio này được xây dựng nhằm mục đích:
           </p>
@@ -182,6 +215,95 @@ export default function Home() {
           </ul>
         </motion.div>
       </section>
+
+      {/* Tools & Tech Stack */}
+      <motion.section 
+        variants={item}
+        className="flex flex-col gap-8 mt-10 md:mt-16 mb-10 overflow-hidden"
+      >
+        <div className="flex flex-col items-center gap-3 text-center">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/10 text-accent w-fit text-sm font-medium border border-accent/20">
+            Công cụ hỗ trợ
+          </div>
+          <h2 className="text-3xl font-bold text-foreground">Công nghệ & Tiện ích đã sử dụng</h2>
+          <p className="text-muted-foreground max-w-2xl">
+            Các công cụ AI, quản lý dự án và framework đóng vai trò cốt lõi trong việc xây dựng trải nghiệm và tối ưu quy trình làm việc.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4">
+          {[
+            {
+              name: "Cursor",
+              role: "AI Code Editor",
+              icon: "https://cdn.simpleicons.org/cursor/white",
+              color: "from-neutral-800 to-black"
+            },
+            {
+              name: "Claude",
+              role: "AI Assistant",
+              icon: "https://cdn.simpleicons.org/claude/D97757",
+              color: "from-orange-950/50 to-orange-900/20"
+            },
+            {
+              name: "Google Drive",
+              role: "Lưu trữ & Phân bổ",
+              icon: "https://cdn.simpleicons.org/googledrive/4285F4",
+              color: "from-blue-950/50 to-blue-900/20"
+            },
+            {
+              name: "Trello",
+              role: "Quản lý tiến độ",
+              icon: "https://cdn.simpleicons.org/trello/0052CC",
+              color: "from-blue-900/40 to-blue-800/10"
+            },
+            {
+              name: "React",
+              role: "Frontend Library",
+              icon: "https://cdn.simpleicons.org/react/61DAFB",
+              color: "from-cyan-950/50 to-cyan-900/20"
+            },
+            {
+              name: "Tailwind CSS",
+              role: "Styling Framework",
+              icon: "https://cdn.simpleicons.org/tailwindcss/06B6D4",
+              color: "from-teal-950/50 to-teal-900/20"
+            },
+            {
+              name: "Vite",
+              role: "Build Tool",
+              icon: "https://cdn.simpleicons.org/vite/646CFF",
+              color: "from-indigo-950/50 to-indigo-900/20"
+            },
+            {
+              name: "Figma",
+              role: "UI/UX Design",
+              icon: "https://cdn.simpleicons.org/figma/F24E1E",
+              color: "from-red-950/50 to-red-900/20"
+            }
+          ].map((tool, idx) => (
+            <motion.div
+              key={idx}
+              whileHover={{ y: -5, scale: 1.02 }}
+              className="glass-panel p-5 rounded-2xl flex items-center gap-4 cursor-default border border-white/5 hover:bg-white/5 transition-colors relative overflow-hidden group"
+            >
+              <div className={`absolute inset-0 bg-gradient-to-br ${tool.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10`} />
+              <div className="w-12 h-12 rounded-xl bg-background border border-white/10 flex items-center justify-center shrink-0 shadow-inner group-hover:shadow-lg transition-all">
+                <img 
+                  src={tool.icon} 
+                  alt={tool.name}
+                  className="w-6 h-6 object-contain dark:invert-0 invert"
+                  style={tool.name === "Cursor" ? { filter: "none" } : {}}
+                />
+              </div>
+              <div className="flex flex-col">
+                <span className="font-semibold text-foreground text-sm sm:text-base">{tool.name}</span>
+                <span className="text-xs text-muted-foreground">{tool.role}</span>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </motion.section>
     </motion.div>
   );
 }
