@@ -27,20 +27,35 @@ export default function Projects() {
               key={project.id}
               onClick={() => setSelectedId(project.id)}
               className={cn(
-                "glass-panel rounded-2xl p-6 cursor-pointer hover:-translate-y-1 transition-transform duration-300 flex flex-col gap-4 border",
+                "glass-panel rounded-2xl p-0 cursor-pointer transition-all duration-300 flex flex-col gap-0 border overflow-hidden hover:-translate-y-2 hover:shadow-xl hover:shadow-cyan-900/20",
                 project.borderColor
               )}
             >
-              <motion.div layoutId={`icon-container-${project.id}`} className={cn("p-3 rounded-xl w-fit", project.bgColor, project.color)}>
-                <Icon size={24} />
+              <motion.div layoutId={`image-container-${project.id}`} className="w-full h-48 border-b border-white/5 relative overflow-hidden bg-background">
+                <img 
+                  src={project.image} 
+                  alt={project.title} 
+                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" 
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    if (target.src === project.image) return; // Prevent infinite loop
+                    target.src = "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop";
+                  }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent"></div>
               </motion.div>
-              <div className="flex flex-col gap-2">
-                <motion.h3 layoutId={`title-${project.id}`} className="font-bold text-lg text-white leading-tight">
-                  {project.title}
-                </motion.h3>
-                <motion.p layoutId={`subtitle-${project.id}`} className="text-sm text-muted-foreground">
-                  {project.subtitle}
-                </motion.p>
+              <div className="p-6 flex flex-col gap-4">
+                <motion.div layoutId={`icon-container-${project.id}`} className={cn("p-3 rounded-xl w-fit -mt-10 relative z-10 glass-panel shadow-lg", project.color)}>
+                  <Icon size={24} />
+                </motion.div>
+                <div className="flex flex-col gap-2">
+                  <motion.h3 layoutId={`title-${project.id}`} className="font-bold text-lg text-white leading-tight">
+                    {project.title}
+                  </motion.h3>
+                  <motion.p layoutId={`subtitle-${project.id}`} className="text-sm text-muted-foreground">
+                    {project.subtitle}
+                  </motion.p>
+                </div>
               </div>
             </motion.div>
           );
@@ -77,8 +92,20 @@ export default function Projects() {
                     </button>
 
                     <div className="p-6 sm:p-10 flex flex-col gap-8">
+                      <motion.div layoutId={`image-container-${project.id}`} className="w-full h-64 sm:h-80 md:h-96 rounded-2xl overflow-hidden border border-white/10 shrink-0 bg-muted/20">
+                        <img 
+                          src={project.image} 
+                          alt={project.title} 
+                          className="w-full h-full object-cover"
+                          onError={(e) => {
+                            const target = e.target as HTMLImageElement;
+                            if (target.src === project.image) return;
+                            target.src = "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop";
+                          }}
+                        />
+                      </motion.div>
                       <div className="flex items-center gap-4">
-                        <motion.div layoutId={`icon-container-${project.id}`} className={cn("p-4 rounded-2xl shrink-0", project.bgColor, project.color)}>
+                        <motion.div layoutId={`icon-container-${project.id}`} className={cn("p-4 rounded-2xl shrink-0 glass-panel", project.color)}>
                           <Icon size={32} />
                         </motion.div>
                         <div className="flex flex-col">
