@@ -115,7 +115,7 @@ export default function Home() {
               <img 
                 src="/portrait.jpg" 
                 alt="Trần Mạnh Dũng" 
-                className="w-full h-full object-cover rounded-full bg-muted/50 transition-transform duration-700 group-hover:scale-105"
+                className="w-full h-full object-cover object-top rounded-full bg-muted/50 transition-transform duration-700 group-hover:scale-105"
                 onError={(e) => {
                   const target = e.target as HTMLImageElement;
                   target.src = "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400"; // Fallback placeholder
