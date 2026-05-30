@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { projects } from "../data/projects";
 import { cn } from "../lib/utils";
-import { X, CheckCircle2, Target, Lightbulb } from "lucide-react";
+import { X, CheckCircle2, Target, Lightbulb, ExternalLink } from "lucide-react";
 
 export default function Projects() {
   const [selectedId, setSelectedId] = useState<string | null>(null);
@@ -153,9 +153,22 @@ export default function Projects() {
                           <h3 className="text-lg font-semibold text-white flex items-center gap-2">
                             <CheckCircle2 size={20} className="text-emerald-400"/> Kết quả sản phẩm
                           </h3>
-                          <p className="text-emerald-100/70 bg-emerald-500/10 p-4 rounded-xl border border-emerald-500/20 leading-relaxed font-medium">
-                            {project.output}
-                          </p>
+                          <div className="flex flex-col gap-4 bg-emerald-500/10 p-4 rounded-xl border border-emerald-500/20">
+                            <p className="text-emerald-100/70 leading-relaxed font-medium">
+                              {project.output}
+                            </p>
+                            {project.link && (
+                              <a 
+                                href={project.link} 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white font-medium py-2 px-4 rounded-lg self-start transition-colors"
+                              >
+                                Xem bài làm chi tiết
+                                <ExternalLink size={16} />
+                              </a>
+                            )}
+                          </div>
                         </div>
                       </motion.div>
                     </div>

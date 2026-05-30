@@ -84,12 +84,13 @@ export default function Home() {
           <div className="p-3 bg-primary/20 text-primary rounded-xl w-fit">
             <GraduationCap size={24} />
           </div>
-          <h2 className="text-xl font-bold text-white mt-2">Học vấn & Mục tiêu</h2>
+          <h2 className="text-xl font-bold text-white mt-2">Học vấn & Sở thích</h2>
           <ul className="text-muted-foreground space-y-2 mt-2 list-disc list-inside">
             <li>Mã sinh viên: <span className="text-white font-medium">25020078</span></li>
             <li>Trường: Đại học Công Nghệ - ĐHQGHN</li>
             <li>Chuyên ngành: Công nghệ thông tin</li>
-            <li className="pt-2">Mục tiêu: Trở thành Lập trình viên Fullstack, nắm vững nền tảng khoa học máy tính và ứng dụng AI.</li>
+            <li>Sở thích: Lập trình, thiết kế UI/UX, tìm hiểu AI và âm nhạc.</li>
+            <li className="pt-2">Mục tiêu: Trở thành Lập trình viên Fullstack đa nhiệm, nắm vững hệ thống lõi và ứng dụng công nghệ AI.</li>
           </ul>
         </motion.div>
 

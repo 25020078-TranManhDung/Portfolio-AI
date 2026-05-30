@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import type { MouseEvent } from "react";
 import { motion } from "motion/react";
 import { cn } from "../lib/utils";
 import { User, Briefcase, NotebookPen } from "lucide-react";
@@ -35,7 +36,7 @@ export default function Navbar() {
     { name: "Tổng kết", path: "#summary", icon: NotebookPen },
   ];
 
-  const handleScrollTo = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
+  const handleScrollTo = (e: MouseEvent<HTMLAnchorElement>, path: string) => {
     e.preventDefault();
     const id = path.replace("#", "");
     const element = document.getElementById(id);
