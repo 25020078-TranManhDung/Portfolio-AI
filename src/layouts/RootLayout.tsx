@@ -11,7 +11,7 @@ export default function RootLayout() {
       
       <Navbar />
       
-      <main className="flex-1 container mx-auto px-4 sm:px-6 md:px-12 pt-32 pb-16 relative z-10 w-full max-w-5xl">
+      <main className="flex-1 container mx-auto px-4 sm:px-6 md:px-12 pb-16 relative z-10 w-full max-w-5xl">
         <Outlet />
       </main>
 

@@ -1,7 +1,5 @@
 import { motion } from "motion/react";
 import { ArrowRight, Code, GraduationCap, Target } from "lucide-react";
-import { Link } from "react-router-dom";
-
 export default function Home() {
   const container = {
     hidden: { opacity: 0 },
@@ -47,12 +45,16 @@ export default function Home() {
           </motion.p>
           
           <motion.div variants={item} className="flex gap-4 mt-4">
-            <Link 
-              to="/projects" 
-              className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-full font-medium transition-all hover:bg-primary/90 hover:scale-105 active:scale-95"
+            <a
+              href="#projects"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-full font-medium transition-all hover:bg-primary/90 hover:scale-105 active:scale-95 cursor-pointer"
             >
               Khám phá Dự án <ArrowRight size={18} />
-            </Link>
+            </a>
           </motion.div>
         </div>
 
