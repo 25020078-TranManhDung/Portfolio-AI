@@ -1,6 +1,37 @@
 import { motion } from "motion/react";
 import { ArrowRight, Code, GraduationCap, Target } from "lucide-react";
+import { useState, useEffect } from "react";
+
 export default function Home() {
+  const [typedName, setTypedName] = useState("");
+  const fullName = "Trần Mạnh Dũng.";
+
+  useEffect(() => {
+    let timeout: NodeJS.Timeout;
+    let currentIndex = 0;
+    
+    // Reset before typing
+    setTypedName("");
+    
+    // Start typing after a short delay
+    const startTimeout = setTimeout(() => {
+      const typeChar = () => {
+        if (currentIndex < fullName.length) {
+          setTypedName(fullName.slice(0, currentIndex + 1));
+          currentIndex++;
+          timeout = setTimeout(typeChar, 100);
+        }
+      };
+      
+      typeChar();
+    }, 500);
+    
+    return () => {
+      clearTimeout(startTimeout);
+      clearTimeout(timeout);
+    };
+  }, []);
+
   const container = {
     hidden: { opacity: 0 },
     show: {
@@ -38,8 +69,11 @@ export default function Home() {
           
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white max-w-3xl leading-tight">
             Xin chào, tôi là
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent mt-2">
-              Trần Mạnh Dũng.
+            <span className="flex items-center mt-2 min-h-[1.2em]">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">
+                {typedName}
+              </span>
+              <span className={`ml-1 inline-block w-[4px] h-[0.9em] bg-primary rounded-full ${typedName.length === fullName.length ? 'animate-none opacity-0 transition-opacity duration-1000' : 'animate-pulse'}`}></span>
             </span>
           </h1>
           
