@@ -118,7 +118,7 @@ export default function Summary() {
         variants={container}
         initial="hidden"
         whileInView="show"
-        viewport={{ once: true, margin: "-50px" }}
+        viewport={{ once: false, margin: "-50px" }}
         className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-2 overflow-hidden"
       >
         {/* Progress Bars */}
@@ -143,7 +143,7 @@ export default function Summary() {
                   <motion.div 
                     initial={{ width: 0 }}
                     whileInView={{ width: `${skill.value}%` }}
-                    viewport={{ once: true }}
+                    viewport={{ once: false }}
                     transition={{ duration: 1.5, delay: 0.2 + idx * 0.1, ease: "easeOut" }}
                     className="h-full bg-gradient-to-r from-primary to-accent rounded-full relative"
                   >
