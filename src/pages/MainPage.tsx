@@ -1,6 +1,7 @@
 import Home from "./Home";
 import Projects from "./Projects";
 import Summary from "./Summary";
+import Contact from "./Contact";
 
 export default function MainPage() {
   return (
@@ -15,6 +16,10 @@ export default function MainPage() {
       
       <section id="summary" className="min-h-screen pt-20">
         <Summary />
+      </section>
+
+      <section id="contact" className="min-h-screen pt-20">
+        <Contact />
       </section>
     </div>
   );

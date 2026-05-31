@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import type { MouseEvent } from "react";
 import { motion } from "motion/react";
 import { cn } from "../lib/utils";
-import { User, Briefcase, NotebookPen, Moon, Sun } from "lucide-react";
+import { User, Briefcase, NotebookPen, Moon, Sun, Mail } from "lucide-react";
 
 export default function Navbar() {
   const [activeHash, setActiveHash] = useState("#home");
@@ -29,7 +29,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["home", "projects", "summary"];
+      const sections = ["home", "projects", "summary", "contact"];
       const scrollPosition = window.scrollY + window.innerHeight / 3;
 
       for (const section of sections) {
@@ -54,6 +54,7 @@ export default function Navbar() {
     { name: "Giới thiệu", path: "#home", icon: User },
     { name: "Dự án", path: "#projects", icon: Briefcase },
     { name: "Tổng kết", path: "#summary", icon: NotebookPen },
+    { name: "Liên hệ", path: "#contact", icon: Mail },
   ];
 
   const handleScrollTo = (e: MouseEvent<HTMLAnchorElement>, path: string) => {
