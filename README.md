@@ -1,20 +1,46 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# Trần Mạnh Dũng - Digital Portfolio
 
-# Run and deploy your AI Studio app
+A modern, interactive digital portfolio showcasing my skills, projects, and personal journey in Information Technology.
 
-This contains everything you need to run your app locally.
+🌍 **Live Demo:** [https://tranmanhdung-portfolio.vercel.app/](https://tranmanhdung-portfolio.vercel.app/)
 
-View your app in AI Studio: https://ai.studio/apps/5d1469d0-55b4-4060-ae7d-938aaf1f3eeb
+## 👨‍💻 Giới thiệu (About Me)
+- **Họ và tên:** Trần Mạnh Dũng
+- **Mã sinh viên:** 25020078
+- **Trường:** Đại học Công Nghệ - ĐHQGHN (VNU-UET)
+- **Chuyên ngành:** Công nghệ thông tin
+- **Sở thích:** Lập trình, thiết kế UI/UX, tìm hiểu AI và âm nhạc.
 
-## Run Locally
+> *"Công nghệ luôn thay đổi, nhưng tư duy giải quyết vấn đề bằng công nghệ thì luôn vững bền."*
 
-**Prerequisites:**  Node.js
+## 🚀 Công nghệ sử dụng (Tech Stack)
+- **Framework:** React + Vite
+- **Styling:** Tailwind CSS
+- **Animations:** Framer Motion (`motion/react`)
+- **Icons:** Lucide React
+- **Công cụ hỗ trợ:** Cursor, Claude, Google Drive, Trello, Figma
 
+## 💻 Chạy dự án ở local (Run Locally)
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+Để chạy dự án này trên máy cá nhân của bạn, hãy làm theo các bước sau:
+
+### Yêu cầu hệ thống (Prerequisites)
+- [Node.js](https://nodejs.org/)
+
+### Cài đặt (Installation)
+1. Cài đặt các thư viện phụ thuộc (Install dependencies):
+   ```bash
+   npm install
+   ```
+
+2. Khởi chạy development server:
+   ```bash
+   npm run dev
+   ```
+
+3. Mở trình duyệt và truy cập `http://localhost:3000` (hoặc port được hiển thị trên terminal).
+
+## 🎯 Mục tiêu Portfolio
+- Tổng hợp và thể hiện kiến thức, kỹ năng đã học từ môn "Nhập môn Công nghệ số và Ứng dụng Trí tuệ nhân tạo".
+- Lưu trữ sản phẩm cá nhân để dễ dàng truy cập, chia sẻ.
+- Giới thiệu năng lực bản thân một cách chuyên nghiệp.
