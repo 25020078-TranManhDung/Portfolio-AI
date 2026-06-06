@@ -144,7 +144,7 @@ export const projects = [
       "Tổ chức và điều phối các cuộc họp nhóm từ xa thông qua Google Meet nhằm thảo luận ý tưởng, đánh giá những thuận lợi (cập nhật nhanh, đồng bộ tốt) và khó khăn (rối thông tin, phụ thuộc Internet)."
     ],
     output: "Hoàn thiện video thuyết trình nhóm. Rút ra giải pháp tối ưu hóa không gian làm việc số: thống nhất quy tắc thiết lập từ đầu, tổ chức thư mục khoa học và kiểm tra chéo thường xuyên.",
-    link: "https://drive.google.com/file/d/1WiKeH7RY2_1mUAEzC0ipEheQV8_gv9Fs/view?usp=drive_link",
+    link: "https://drive.google.com/file/d/1JPMjHzLcuBncKEqiu9JDT0Ej0uMEL-x9/view?usp=sharing",
     results: [
       {
         image: "/bai4-anh1.png",
