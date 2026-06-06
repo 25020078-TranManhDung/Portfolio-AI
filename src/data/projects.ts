@@ -121,6 +121,12 @@ export const projects = [
       {
         cols: 1,
         items: [
+          { image: "/bai3-anh7.png", caption: "Giải thích sự khác biệt", aspectRatio: "aspect-[16/9]" }
+        ]
+      },
+      {
+        cols: 1,
+        items: [
           { image: "/bai3-anh6.png", caption: "4 nguyên tắc vàng để viết Prompt hiệu quả", aspectRatio: "aspect-[16/9]" }
         ]
       }
