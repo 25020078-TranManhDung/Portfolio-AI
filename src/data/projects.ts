@@ -65,11 +65,11 @@ export const projects = [
       "Tiến hành đánh giá chuyên sâu độ tin cậy của từng nguồn dựa trên 4 tiêu chí cốt lõi: Tác giả, Cơ quan xuất bản, Phương pháp nghiên cứu/Trích dẫn gốc và Tính cập nhật."
     ],
     output: "Báo cáo phân tích chuyên sâu gồm 10 tài liệu tham khảo với bảng tổng hợp xếp hạng độ tin cậy từ Khá đến Rất cao. Củng cố phương pháp đánh giá tài liệu, phục vụ đắc lực cho nghiên cứu khoa học.",
-    link: "https://drive.google.com/file/d/1TIXDvVU7r7sYa3w_j1qW8qEFoeutUAGy/view?usp=sharing",
+    link: "https://drive.google.com/file/d/1zOiN4XJiXNReaV9eFR6Vf7FPJsL5Luvo/view?usp=sharing",
     results: [
       {
         image: "/bai2-anh1.png",
-        caption: "Quá trình tìm kiếm tài liệu",
+        caption: "Các từ khóa và toán tử đã sử dụng",
         aspectRatio: "aspect-[1/1]"
       },
       {
